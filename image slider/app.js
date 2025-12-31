@@ -14,6 +14,6 @@ nextBtn.addEventListener("click", () => {
 });
 
 backBtn.addEventListener("click", () => {
-    container.scrollLeft -= 600;
+    container.scrollLeft -= 300;
     container.style.scrollBehaviour = "smooth";
 });
