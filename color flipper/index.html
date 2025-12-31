@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color flipper</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        button {
+            border-radius: 20px;
+        }
+        #red-btn {
+            background-color: red;
+        }
+        #green-btn {
+            background-color: green;
+        }
+        #blue-btn {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="colorBox">
+        <h3>Color flipper</h3> 
+        <div>
+            <button id="red-btn" onclick="setColor('red')">Red</button>
+            <button id="green-btn" onclick="setColor('green')">Green</button>
+            <button id="blue-btn" onclick="setColor('blue')">Blue</button>
+            <button onclick="randomColor()">Random</button>
+        </div>
+    </section>
+
+   <script src="app.js"></script>
+</body>
+</html>
