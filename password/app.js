@@ -45,9 +45,7 @@ document.addEventListener('keydown', function(event) {
             text.value = ""
         } else {
             alert("Your password must be at least 8 characters long.");
-            passBox.style.borderColor = "#c0c0c0"
             message.style.display = "none";
-            text.value = ""
         }
      }
 });
