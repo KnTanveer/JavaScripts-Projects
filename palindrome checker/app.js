@@ -8,6 +8,8 @@ function check() {
     } else {
         alert(input.value + " is not a palindrome")
     }
+
+    input.value = ""
 }
 
 document.addEventListener("keydown", function(event) {
