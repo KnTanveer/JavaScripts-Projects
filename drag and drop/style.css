@@ -6,7 +6,7 @@ section {
 
 #left, #right {
     width: 300px;
-    height: 400px;
+    min-height: 400px; 
     margin: 20px;
     border: 2px dashed #53709f;
 }
