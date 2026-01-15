@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.coin {
+    margin: 10px 5px;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 3s ease-out;
+    perspective: 800px;
+}
+
+.head-coin, .tail-coin {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #FEB51B;
+  border: 12px solid #FEE067;
+  position: relative;
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.tail-coin {
+    transform: rotateX(180deg);
+}
+
+p {
+    color: #FEE791;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: -1px -1px #000000;
+}
