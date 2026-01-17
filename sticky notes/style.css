@@ -1,0 +1,79 @@
+body {
+    margin: 10px;
+}
+
+header p {
+    display: inline-block;
+}
+
+.note {
+  width: 200px;
+  height: 200px;
+  background: #fffb88;
+  padding: 10px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+  font-family: 'Comic Sans MS', cursive;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  outline: none;
+  overflow-wrap: break-word;
+  position: relative;
+  transition: 0.2s transform ease-in-out;
+}
+
+.note::-webkit-scrollbar {
+  width: 6px; 
+}
+
+.note::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.note::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 10px;
+}
+
+.note::-webkit-scrollbar-thumb:hover {
+  background: #aeadad;
+}
+
+.right-tilt {
+    transform: rotate(1deg);
+}
+.left-tilt {
+    transform: rotate(-1deg);
+}
+
+.note:hover {
+    transform: scale(1.2) rotate(0deg);
+    z-index: 10;
+    box-shadow: 6px 12px 20px rgba(0, 0, 0, 0.35);
+}
+
+.note-box {
+    max-width: 710px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    overflow: visible;
+}
+
+@media (max-width: 430px) {
+    .note-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 431px) and (max-width: 700px) {
+    .note-box { 
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 701px) {
+    .note-box {
+        grid-template-columns: 1fr 1fr 1fr;
+    }    
+}
