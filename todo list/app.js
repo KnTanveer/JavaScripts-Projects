@@ -13,7 +13,7 @@ function renderTodos() {
         
         todosDivHTML += `
         <div class="tasks-div">
-            <button class="checkbox" dataset-task-idx="${idx}" onclick="removeTodo(${idx})"></button>
+            <button class="checkbox" onclick="removeTodo(${idx})"></button>
             <p class="tasks-name">${todos.name}</p>
         </div>`    
     })
