@@ -1,32 +1,24 @@
 let todos = []
-const todosDiv = document.getElementById("todos")
-const input = document.getElementById("todoInput")
+let todosDiv = document.getElementById("todos")
+let input = document.getElementById("todoInput")
 const storageKey = todos;
 
 function renderTodos() {
-    todosDiv.innerHTML = null;
+    todosDiv.innerHTML = "";
 
-    for(const [idx, todo] of Object.entries(todos)) {
-        const container = document.createElement("div")
-        container.style.border = "none";
-        container.style.margin = "10px 0px";
-        container.style.padding = "0px";
-        container.style.display = "flex";
+    let todosDivHTML = ""; 
+    todos.forEach((value, idx) => {
+        todos.idx = idx;
+        todos.name = value;
+        
+        todosDivHTML += `
+        <div class="tasks-div">
+            <button class="checkbox" dataset-task-idx="${idx}" onclick="removeTodo(${idx})"></button>
+            <p class="tasks-name">${todos.name}</p>
+        </div>`    
+    })
 
-        const title = document.createElement("p")
-        title.style.display = "inline";
-        title.style.margin = "0px";
-        title.textContent = todo;
-
-        const checkbox = document.createElement("button")
-        checkbox.style.padding = "6px";
-        checkbox.style.margin = " 3px 6px 3px 3px";
-        checkbox.style.borderRadius = "0px";
-        checkbox.onclick = () => removeTodo(idx)
-
-        container.append(checkbox, title)
-        todosDiv.append(container)
-    }
+    todosDiv.innerHTML = todosDivHTML;
 }
 
 function addTodo() {
@@ -34,27 +26,27 @@ function addTodo() {
     if (!value) {
         return
     }
-    todos.push(value)
+    todos.push(value);
     input.value = ""
-    renderTodos()
-    saveTodos()
+    renderTodos();
+    saveTodos();
 }
 
 function removeTodo(idx) {
-    todos.splice(idx, 1)
-    renderTodos()
-    saveTodos()
+    todos.splice(idx, 1);
+    renderTodos();
+    saveTodos();
 }
 
 function loadTodos() {
     const oldTodos = localStorage.getItem(storageKey)
     if (oldTodos) todos = JSON.parse(oldTodos)
-    renderTodos()
+    renderTodos();
 }
 
 function saveTodos() {
-    const stringTodos = JSON.stringify(todos)
-    localStorage.setItem(storageKey, stringTodos)
+    const stringTodos = JSON.stringify(todos);
+    localStorage.setItem(storageKey, stringTodos);
 }
 
 document.addEventListener("DOMContentLoaded", loadTodos)

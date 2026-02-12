@@ -1,0 +1,17 @@
+.tasks-div {
+    border: none;
+    margin: 10px 0px;
+    padding: 0px;
+    display: flex;    
+}
+
+.checkbox {
+    padding: 6px;
+    margin: 3px 6px 3px 3px;
+    border-radius: 0px;
+}
+
+.tasks-name {
+    display: inline;
+    margin: 0px;
+}
